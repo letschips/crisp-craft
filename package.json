@@ -1,0 +1,25 @@
+{
+  "name": "crisp-craft",
+  "version": "0.1.1",
+  "description": "Craft-inspired Reading View polish for Obsidian, designed for transparent and glass workflows.",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc --noEmit --skipLibCheck && node esbuild.config.mjs production",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "author": "Crisp",
+  "devDependencies": {
+    "@types/jsdom": "^30.0.0",
+    "@types/node": "^26.1.1",
+    "builtin-modules": "^5.3.0",
+    "esbuild": "^0.28.1",
+    "jsdom": "^29.1.1",
+    "obsidian": "^1.13.1",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.10"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "crisp-craft",
+  "name": "Crisp Craft",
+  "version": "0.1.1",
+  "minAppVersion": "1.6.0",
+  "description": "Craft-inspired Reading View polish for Obsidian, designed for transparent and glass workflows.",
+  "author": "Crisp",
+  "isDesktopOnly": false
+}

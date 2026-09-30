@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+*.log
+
+# Local audit evidence and live-vault probes stay on this machine.
+evidence/
+scripts/runtime-polish.*
