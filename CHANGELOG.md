@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.2] - 2026-09-30
 
 ### Fixed
-- `data.json` 损坏无法读取时（例如同步冲突或写入中断），先备份为 `data.json.unreadable-<时间>` 再恢复默认设置，避免授权码和设置被静默覆盖；无法备份时本次运行不保存设置。
+- `data.json` 损坏无法读取时（例如同步冲突或写入中断），先备份为 `data.json.unreadable-<时间>` 再恢复默认设置，避免设置被静默覆盖；无法备份时本次运行不保存设置。
 
 ## [0.1.1] - 2026-09-30
 
