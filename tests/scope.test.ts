@@ -236,7 +236,7 @@ describe("Reading View CSS scope", () => {
     }
   });
 
-  it("limits the translucent compositor guard to active Craft glass surfaces", () => {
+  it("limits the compositor guard to active Craft glass surfaces across all window modes", () => {
     const guardBlocks = blocks.filter(
       (block) =>
         block.declarations.includes("backdrop-filter: none !important") &&
@@ -248,7 +248,6 @@ describe("Reading View CSS scope", () => {
     const isGuarded = (element: Element): boolean =>
       guardSelectors.some((selector) => element.matches(selector));
 
-    document.body.classList.add("is-translucent");
     const plainRoot = document.createElement("div");
     plainRoot.className = "markdown-reading-view crisp-craft-enabled";
     plainRoot.innerHTML = `
@@ -314,9 +313,6 @@ describe("Reading View CSS scope", () => {
     `;
     document.body.append(imageRoot);
     expect(isGuarded(imageRoot.querySelector(".image-embed")!)).toBe(true);
-
-    document.body.classList.remove("is-translucent");
-    expect(isGuarded(glassRoot.querySelector("blockquote")!)).toBe(false);
 
     plainRoot.remove();
     glassRoot.remove();

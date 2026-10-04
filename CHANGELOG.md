@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.3] - 2026-10-05
+
+### Fixed
+- 解决 bug：修复在阅读视图中滚动时，由于 Craft 玻璃组件（分割线、引用块、附件与图片框）的 `backdrop-filter` 导致的界面模糊、撕裂与拖拽渲染残留问题（Compositor Guard 全窗口模式生效）。
+
 ## [0.1.2] - 2026-09-30
 
 ### Fixed

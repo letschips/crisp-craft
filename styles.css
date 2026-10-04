@@ -823,26 +823,21 @@
   }
 }
 
-/* In Obsidian's translucent window mode, Electron can tear nested blur inside
-   scrolled Reading View content. Disable blur only on Craft glass surfaces. */
-body.is-translucent
-  .markdown-reading-view.crisp-craft-enabled[data-cc-divider-default="glass"]
+/* In Obsidian's reading view, Electron tears nested blur inside
+   scrolled Reading View content (sampling desynchronization). Disable blur across Craft glass surfaces. */
+.markdown-reading-view.crisp-craft-enabled[data-cc-divider-default="glass"]
   hr.cc-divider,
-body.is-translucent
-  .markdown-reading-view.crisp-craft-enabled
+.markdown-reading-view.crisp-craft-enabled
   .callout.cc-divider-callout.cc-divider-glass,
-body.is-translucent
-  .markdown-reading-view.crisp-craft-enabled[data-cc-attachment-style="soft"]
+.markdown-reading-view.crisp-craft-enabled[data-cc-attachment-style="soft"]
   :is(a.cc-attachment, span.cc-attachment),
-body.is-translucent
-  .markdown-reading-view.crisp-craft-enabled[data-cc-quote-style="glass-edge"]
+.markdown-reading-view.crisp-craft-enabled[data-cc-quote-style="glass-edge"]
   .markdown-preview-section
   :is(
     blockquote,
     .callout:not([data-callout="divider"]):not(.cc-divider-callout)
   ),
-body.is-translucent
-  .markdown-reading-view.crisp-craft-enabled[data-cc-image-frame="glass"]
+.markdown-reading-view.crisp-craft-enabled[data-cc-image-frame="glass"]
   .markdown-preview-section
   :is(.image-embed, .media-embed):has(> img) {
   backdrop-filter: none !important;
