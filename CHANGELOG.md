@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.5] - 2026-10-14
+
+### Fixed
+- 三种引用样式接管外观时隐藏 Still、Baseline 等主题的内侧引用竖线，避免与 Craft 边框重复；关闭引用样式后恢复主题装饰，callout 与编辑模式保持原有行为。
+
 ## [0.1.4] - 2026-10-14
 
 ### Fixed

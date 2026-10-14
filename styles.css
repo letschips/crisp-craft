@@ -579,6 +579,14 @@
 }
 
 /* Quotes and callouts: divider callouts retain the dedicated divider system. */
+/* Craft supplies the quote edge; suppress a theme's inset edge (Still/Baseline)
+   only while quote styling is enabled. Callout decorations remain theme-owned. */
+.markdown-reading-view.crisp-craft-enabled[data-cc-quote-style]
+  .markdown-preview-section
+  blockquote::before {
+  display: none;
+}
+
 .markdown-reading-view.crisp-craft-enabled[data-cc-quote-style]
   .markdown-preview-section
   :is(
