@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.4] - 2026-10-14
+
+### Fixed
+- 嵌套在引用或 callout 开头、结尾的 callout 和引用，不再在容器内边距之外再叠一层外边距（原来折叠的内层 callout 下方会多出约 1 行空白），三种引用样式都适用。
+- 间距和附件标签尺寸改为跟随正文字号：原来用 `rem`，弹出窗口里根字号是 15px、正文仍是设置的字号，间距会整体偏小；iOS 上根字号还会随系统字号变化。主窗口里的数值不变。
+
 ## [0.1.3] - 2026-10-05
 
 ### Fixed

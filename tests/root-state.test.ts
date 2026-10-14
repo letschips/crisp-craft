@@ -407,6 +407,16 @@ describe("Reading View CSS tokens", () => {
     expect(root).not.toContain("--background-primary");
   });
 
+  // The root font size is not the text size everywhere: popout windows set
+  // it to 15px while notes stay at the font size setting, and iOS scales it
+  // with the system text size. Spacing in rem drifts from the text there.
+  it("sizes spacing from the text size, never the root font size", () => {
+    expect(tokenBlock()).toContain(
+      "--cc-unit: var(--font-text-size, 16px)",
+    );
+    expect(css).not.toMatch(/\d(?:\.\d+)?rem\b/);
+  });
+
   it("routes obsidian and custom accent sources explicitly", () => {
     expect(tokenBlock('[data-cc-accent-source="obsidian"]')).toMatch(
       /--cc-accent:\s*var\(--interactive-accent,\s*var\(--color-accent,\s*#6b84bf\)\s*\)/s,

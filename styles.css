@@ -1,5 +1,8 @@
 /* Crisp Craft owns its tokens only on the Reading View root. */
 .markdown-reading-view.crisp-craft-enabled {
+  /* Spacing unit: the note's text size. The root font size differs from it
+     in popout windows (15px) and with iOS text scaling. */
+  --cc-unit: var(--font-text-size, 16px);
   --cc-accent: var(
     --cs-accent-primary,
     var(--interactive-accent, var(--color-accent, #6b84bf))
@@ -78,7 +81,7 @@
     transparent
   );
   --cc-divider-opacity: 0.82;
-  --cc-divider-gap: clamp(1.4rem, 4vw, 2.4rem);
+  --cc-divider-gap: clamp(calc(var(--cc-unit) * 1.4), 4vw, calc(var(--cc-unit) * 2.4));
 }
 
 .markdown-reading-view.crisp-craft-enabled[data-cc-accent-source="obsidian"] {
@@ -332,10 +335,10 @@
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.42rem;
+  gap: calc(var(--cc-unit) * 0.42);
   max-width: 100%;
   min-width: 0;
-  margin: 0.12rem 0.12rem 0.12rem 0;
+  margin: calc(var(--cc-unit) * 0.12) calc(var(--cc-unit) * 0.12) calc(var(--cc-unit) * 0.12) 0;
   border: 1px solid var(--cc-border-accent);
   border-radius: var(--cc-radius-md);
   background-color: var(--cc-surface);
@@ -355,8 +358,8 @@
 )::before {
   content: "";
   flex: 0 0 auto;
-  width: 0.7rem;
-  height: 0.88rem;
+  width: calc(var(--cc-unit) * 0.7);
+  height: calc(var(--cc-unit) * 0.88);
   border: 1.5px solid color-mix(in srgb, var(--cc-accent) 72%, transparent);
   border-radius: 2px;
   background:
@@ -366,7 +369,7 @@
         color-mix(in srgb, var(--cc-accent) 34%, transparent) 47% 54%,
         transparent 55%
       )
-      top right / 0.34rem 0.34rem no-repeat,
+      top right / calc(var(--cc-unit) * 0.34) calc(var(--cc-unit) * 0.34) no-repeat,
     color-mix(in srgb, var(--cc-accent) 8%, transparent);
   box-shadow: inset 0 0 0 1px rgb(255 255 255 / 12%);
   pointer-events: none;
@@ -378,12 +381,12 @@
 )::after {
   content: attr(data-cc-ext);
   flex: 0 0 auto;
-  min-width: 1.7rem;
-  padding: 0.08rem 0.26rem;
+  min-width: calc(var(--cc-unit) * 1.7);
+  padding: calc(var(--cc-unit) * 0.08) calc(var(--cc-unit) * 0.26);
   border-radius: var(--cc-radius-sm);
   background-color: var(--cc-surface-strong);
   color: color-mix(in srgb, var(--cc-accent) 76%, var(--cc-text));
-  font-size: 0.62rem;
+  font-size: calc(var(--cc-unit) * 0.62);
   font-weight: 700;
   letter-spacing: 0;
   line-height: 1.35;
@@ -408,13 +411,13 @@
 
 .markdown-reading-view.crisp-craft-enabled[data-cc-attachment-style="compact"]
   :is(a.cc-attachment, span.cc-attachment) {
-  padding: 0.22rem 0.46rem;
+  padding: calc(var(--cc-unit) * 0.22) calc(var(--cc-unit) * 0.46);
   font-size: 0.9em;
 }
 
 .markdown-reading-view.crisp-craft-enabled[data-cc-attachment-style="soft"]
   :is(a.cc-attachment, span.cc-attachment) {
-  padding: 0.46rem 0.68rem;
+  padding: calc(var(--cc-unit) * 0.46) calc(var(--cc-unit) * 0.68);
   border-color: var(--cc-border-strong);
   border-radius: var(--cc-radius-md);
   background-color: var(--cc-surface-strong);
@@ -604,8 +607,8 @@
 .markdown-reading-view.crisp-craft-enabled[data-cc-quote-style="glass-edge"]
   .markdown-preview-section
   blockquote {
-  margin-block: 1rem;
-  padding: 0.82rem 1rem;
+  margin-block: var(--cc-unit);
+  padding: calc(var(--cc-unit) * 0.82) var(--cc-unit);
   border: 1px solid var(--cc-border-subtle);
   border-inline-start-width: 3px;
   border-inline-start-color: var(--cc-border-strong);
@@ -621,7 +624,7 @@
 .markdown-reading-view.crisp-craft-enabled[data-cc-quote-style="glass-edge"]
   .markdown-preview-section
   .callout:not([data-callout="divider"]):not(.cc-divider-callout) {
-  margin-block: 1rem;
+  margin-block: var(--cc-unit);
   border-radius: var(--cc-radius-md);
   box-shadow: inset 0 1px rgb(255 255 255 / 12%);
 }
@@ -632,9 +635,9 @@
     blockquote,
     .callout:not([data-callout="divider"]):not(.cc-divider-callout)
   ) {
-  margin-block: 0.9rem;
-  padding-block: 0.7rem;
-  padding-inline: 1rem 0;
+  margin-block: calc(var(--cc-unit) * 0.9);
+  padding-block: calc(var(--cc-unit) * 0.7);
+  padding-inline: var(--cc-unit) 0;
   border: 0;
   border-inline-start: 3px solid var(--cc-border-strong);
   border-radius: 0;
@@ -650,8 +653,8 @@
     blockquote,
     .callout:not([data-callout="divider"]):not(.cc-divider-callout)
   ) {
-  margin-block: 0.72rem;
-  padding: 0.4rem 0.2rem;
+  margin-block: calc(var(--cc-unit) * 0.72);
+  padding: calc(var(--cc-unit) * 0.4) calc(var(--cc-unit) * 0.2);
   border: 0;
   border-radius: 0;
   background-color: transparent;
@@ -659,6 +662,28 @@
   line-height: 1.72;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
+}
+
+/* A quote or callout nested at the start or end of another ends on its
+   container's padding; its own margin would add to it. */
+.markdown-reading-view.crisp-craft-enabled[data-cc-quote-style]
+  .markdown-preview-section
+  :is(blockquote, .callout-content)
+  > :is(
+    blockquote,
+    .callout:not([data-callout="divider"]):not(.cc-divider-callout)
+  ):first-child {
+  margin-block-start: 0;
+}
+
+.markdown-reading-view.crisp-craft-enabled[data-cc-quote-style]
+  .markdown-preview-section
+  :is(blockquote, .callout-content)
+  > :is(
+    blockquote,
+    .callout:not([data-callout="divider"]):not(.cc-divider-callout)
+  ):last-child {
+  margin-block-end: 0;
 }
 
 /* Images: frame the native image embed without replacing dimensions or nodes. */
@@ -681,7 +706,7 @@
 .markdown-reading-view.crisp-craft-enabled[data-cc-image-frame="none"]
   .markdown-preview-section
   :is(.image-embed, .media-embed):has(> img) {
-  margin-block: 0.28rem;
+  margin-block: calc(var(--cc-unit) * 0.28);
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -703,7 +728,7 @@
 .markdown-reading-view.crisp-craft-enabled[data-cc-image-frame="subtle"]
   .markdown-preview-section
   :is(.image-embed, .media-embed):has(> img) {
-  margin-block: 0.42rem;
+  margin-block: calc(var(--cc-unit) * 0.42);
   padding: 3px;
   border: 1px solid var(--cc-border-subtle);
   border-radius: var(--cc-radius-md);
@@ -724,7 +749,7 @@
 .markdown-reading-view.crisp-craft-enabled[data-cc-image-frame="glass"]
   .markdown-preview-section
   :is(.image-embed, .media-embed):has(> img) {
-  margin-block: 0.46rem;
+  margin-block: calc(var(--cc-unit) * 0.46);
   padding: 3px;
   border: 1px solid var(--cc-border-accent);
   border-radius: var(--cc-radius-lg);
@@ -763,7 +788,7 @@
   width: fit-content;
   min-width: 0;
   max-width: 100%;
-  margin-block: 1rem;
+  margin-block: var(--cc-unit);
   border: 1px solid var(--cc-border);
   border-collapse: separate;
   border-spacing: 0;
@@ -787,7 +812,7 @@
   :is(th, td) {
   /* Keep inline padding close to native so short CJK cells in wide tables
      are not squeezed to one glyph per line. */
-  padding: 0.55rem 0.6rem;
+  padding: calc(var(--cc-unit) * 0.55) calc(var(--cc-unit) * 0.6);
   /* The outer table owns its corners, including theme-rounded edge cells. */
   border-radius: 0 !important;
   border-bottom: 1px solid
