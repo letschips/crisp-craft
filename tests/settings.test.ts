@@ -302,6 +302,7 @@ describe("settings tab", () => {
         (heading) => heading.textContent,
       ),
     ).toEqual([
+      "Crisp Craft",
       "全局",
       "分隔线",
       "标题",

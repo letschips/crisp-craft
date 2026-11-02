@@ -170,6 +170,20 @@ interface CrispCraftSettingsHost extends Plugin {
 
 type SettingOption<T extends string> = readonly [value: T, label: string];
 
+// styles.css is scoped to the Reading View, so the settings header is styled inline.
+function addBrandHeader(containerEl: HTMLElement, name: string, slogan: string): void {
+  const title = document.createElement("h2");
+  title.textContent = name;
+  title.className = "crisp-brand-title";
+  title.style.cssText = "margin:0;padding:0;font-size:1.35rem;font-weight:650;";
+  const subtitle = document.createElement("p");
+  subtitle.textContent = slogan;
+  subtitle.className = "crisp-brand-slogan";
+  subtitle.style.cssText =
+    "margin:6px 0 1.25rem;color:var(--text-muted);font-size:0.88rem;line-height:1.45;";
+  containerEl.append(title, subtitle);
+}
+
 function addGroupHeading(containerEl: HTMLElement, title: string): void {
   const heading = document.createElement("h2");
   heading.textContent = title;
@@ -215,6 +229,8 @@ export class CrispCraftSettingTab extends PluginSettingTab {
   display(): void {
     this.containerEl.replaceChildren();
     this.customAccentSetting = null;
+
+    addBrandHeader(this.containerEl, "Crisp Craft", "让笔记好看，也好读");
 
     this.displayGlobal();
     this.displayDivider();
