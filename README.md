@@ -62,12 +62,12 @@ For explicit style selection per section, use Obsidian callout metadata:
 > [!divider|glass]
 ```
 
-- `wave`: Continuous wave ribbon pattern via token-tinted SVG mask.
-- `minimal`: Subtle center line with gracefully faded ends.
-- `dots`: Restrained repeating dot sequence.
-- `brush`: Soft irregular artistic brush stroke mask.
-- `tape`: Translucent textured strip with softened edges.
-- `glass`: Fine translucent pill with subtle border highlight.
+- `wave`: A short, even wave centered on the line, fading out at both ends.
+- `minimal`: A hairline that is strongest in the middle and fades at both ends.
+- `dots`: A centered three-dot section break.
+- `brush`: A single tapered brush stroke with dry-brush streaks.
+- `tape`: A short, slightly tilted strip of translucent tape with torn ends.
+- `glass`: A small translucent capsule resting on a fading hairline.
 
 *Divider callouts automatically expose `role="separator"` and `aria-orientation="horizontal"` for screen readers.*
 

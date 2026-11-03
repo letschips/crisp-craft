@@ -305,9 +305,7 @@ describe("divider CSS", () => {
 
   it("uses the required original treatment families", () => {
     expect(css).toContain("-webkit-mask-image");
-    expect(css).toContain("--cc-divider-background-color: var(--cc-accent)");
-    expect(css).toContain("radial-gradient");
-    expect(css).toContain("repeating-linear-gradient");
+    expect(css).toContain("--cc-divider-background-color: var(--cc-divider-line)");
     expect(css).toContain("backdrop-filter: blur");
   });
 
